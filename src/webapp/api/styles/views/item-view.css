@@ -1,0 +1,24 @@
+div.exhibit-item-view {
+    position: relative;
+}
+
+div.exhibit-item-view-title {
+    font-weight:    bold;
+}
+
+div.exhibit-item-view-body {
+	padding: 0.3em;
+}
+
+table.exhibit-item-view-properties {
+}
+
+tr.exhibit-item-view-property {
+}
+
+td.exhibit-item-view-property-name {
+	color: #888;
+}
+
+td.exhibit-item-view-property-values {
+}
