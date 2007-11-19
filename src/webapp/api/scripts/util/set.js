@@ -26,7 +26,7 @@ Exhibit.Set.prototype.add = function(o) {
 }
 
 Exhibit.Set.prototype.addSet = function(set) {
-    for (o in set._hash) {
+    for (var o in set._hash) {
         this.add(o);
     }
 }
@@ -41,8 +41,17 @@ Exhibit.Set.prototype.remove = function(o) {
 }
 
 Exhibit.Set.prototype.removeSet = function(set) {
-    for (o in set._hash) {
+    for (var o in set._hash) {
         this.remove(o);
+    }
+}
+
+Exhibit.Set.prototype.retainSet = function(set) {
+    for (var o in this._hash) {
+        if (!set.contains(o)) {
+            delete this._hash[o];
+            this._count--;
+        }
     }
 }
 
@@ -56,14 +65,14 @@ Exhibit.Set.prototype.size = function() {
 
 Exhibit.Set.prototype.toArray = function() {
     var a = [];
-    for (o in this._hash) {
+    for (var o in this._hash) {
         a.push(o);
     }
     return a;
 }
 
 Exhibit.Set.prototype.visit = function(f) {
-    for (o in this._hash) {
+    for (var o in this._hash) {
         if (f(o) == true) {
             break;
         }
